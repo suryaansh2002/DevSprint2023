@@ -5,7 +5,8 @@ import Sidenav from '../../Components/SideNav/Sidenav';
 import logo from '../../assets/logo.png'
 import './Home.css'
 import { AiOutlineHeart, AiFillHeart, AiFillCalendar } from 'react-icons/ai'
-import { BsBookmark, BsBookmarkFill, BsSearch } from 'react-icons/bs'
+import { BsBookmark, BsBookmarkFill, BsSearch, BsFillMoonFill, BsFillSunFill } from 'react-icons/bs'
+import { MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem, MDBDropdownLink, MDBContainer } from 'mdb-react-ui-kit';
 
 export default function Home() {
     const [articles, setArticles] = useState([])
@@ -14,9 +15,7 @@ export default function Home() {
     const [language, setLanguage] = useState('')
     const [category, setCategory] = useState('')
     const [filter, setFilter] = useState('')
-
-    // const [search, setSearch] = useState('')
-
+    const [theme, setTheme] = useState('light')
 
 
     const [url, setUrl] = useState('https://newsapi.org/v2/top-headlines?country=us&apiKey=579a2865d9ce4984a18171d4ed2e2b0e')
@@ -108,10 +107,14 @@ export default function Home() {
 
     }
 
-    // 
+
 
     return (
         <div className='home-container'>
+            {theme == 'light' ? <button className='themeBtn'><BsFillMoonFill /></button> : <button  className='themeBtn'>
+
+                <BsFillSunFill />
+            </button>}
             <div className='sidenav'>
                 <div>
                     <img className="logo-nav" src={logo} />
@@ -195,13 +198,13 @@ export default function Home() {
                         <div className='news-title'>{item.title}</div>
                         <div className='da-cont'>
 
-                        <div className='news-date'><AiFillCalendar className='calender-icon'/>{new Date(item.publishedAt).toDateString()}</div>
-                        <div className='news-autor'>
-                            Author:
-                            <a target={item.author && '_blank'} href={item.author ? 'https://www.google.com/search?q=' + item.author : ''}>
-                                {item.author ? item.author : 'Anonymous'}
-                            </a>
-                        </div>
+                            <div className='news-date'><AiFillCalendar className='calender-icon' />{new Date(item.publishedAt).toDateString()}</div>
+                            <div className='news-autor'>
+                                Author:
+                                <a target={item.author && '_blank'} href={item.author ? 'https://www.google.com/search?q=' + item.author : ''}>
+                                    {item.author ? item.author : 'Anonymous'}
+                                </a>
+                            </div>
                         </div>
                         {item.content && <div className='content-ar'>{item.content.slice(-6) == 'chars]' ? item.content.slice(0, -17) + '...' : item.content}</div>}
 

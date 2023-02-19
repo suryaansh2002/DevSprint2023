@@ -101,7 +101,10 @@ border-radius: 20px;
     font-size: 1.1rem;
     margin-top: 1rem;
 }
-
+.themeBtn{
+    /* color: #302414; */
+    /* font-size: 1.2rem; */
+}
 .rm a{
     color: white;
 }
