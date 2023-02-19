@@ -4,16 +4,23 @@
 }
 
 .home-main{
-
+width: calc(100vw - 20rem);
+margin-left: 15rem;
 }
 .news-card{
     display: inline-block;
     background-color: antiquewhite;
     padding: 2rem;
-    width: 15rem;
+    width: 30rem;
+    margin: 2rem;
+    height: 20rem;
+    vertical-align: top;
     border-radius: 10px;
 }
 
 .news-img{
 width: 10rem;
+}
+.news-title{
+    font-weight: bold;
 }

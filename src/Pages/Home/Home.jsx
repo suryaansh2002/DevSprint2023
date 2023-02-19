@@ -9,71 +9,19 @@ export default function Home() {
     
     var url2='https://newsdata.io/api/1/news?apikey=pub_1749158b4447894e481fefd089da75e713eda&page=16767944382f68b51653791e2e6020068f413d764f'
     var nextpage;
+    url='https://newsapi.org/v2/everything?q=bitcoin&apiKey=d90e1e55f85341acb95ea40b3658f3ca'
     useEffect(() => {
-        axios.get(url2 + '&language=en').then((res) => {
+        axios.get(url).then((res) => {
             console.log(res.data)
             const arr=[]
-            res.data.results.map((item)=>{
-                if(item.image_url){
+            res.data.articles.map((item)=>{
+                if(item.urlToImage){
                     arr.push(item)
                 }
             })
-            nextpage=res.data.nextpage;
-            url2=url+'&page='+nextpage;
-            if(arr.length<15){
-                  axios.get(url2 + '&language=en').then((response) => {
-                    response.data.results.map((item)=>{
-                        if(item.image_url){
-                            arr.push(item)
-                        }
-                    })
-                    nextpage=res.data.nextpage;
-                    url2=url+'&page='+nextpage; 
-                    console.log(arr)   
-                    if(arr.length<15){
-                        axios.get(url2 + '&language=en').then((response2) => {
-                          response2.data.results.map((item)=>{
-                              if(item.image_url){
-                                  arr.push(item)
-                              }
-                          })
-                          nextpage=res.data.nextpage;
-                          url2=url+'&page='+nextpage;
-                    console.log(arr)   
-
-                          if(arr.length<15){
-                            axios.get(url2 + '&language=en').then((response3) => {
-                              response3.data.results.map((item)=>{
-                                  if(item.image_url){
-                                      arr.push(item)
-                                  }
-                              })
-                              nextpage=res.data.nextpage;
-                              url2=url+'&page='+nextpage;    
-                              if(arr.length<15){
-                                axios.get(url2 + '&language=en').then((response4) => {
-                                  response4.data.results.map((item)=>{
-                                      if(item.image_url){
-                                          arr.push(item)
-                                      }
-                                  })
-                                  nextpage=res.data.nextpage;
-                                  url2=url+'&page='+nextpage;                                
-                              })
-                              console.log(arr)
-                          }
-                                          
-                          })
-                          console.log(arr)
-                      }
-                                          
-                      })
-                      console.log(arr)
-                  }
-                                  
-                })
-                console.log(arr)
-            }
+            // nextpage=res.data.nextpage;
+            // url2=url+'&page='+nextpage;
+            
       setArticles(arr)
         })
     }, [])
@@ -87,9 +35,10 @@ export default function Home() {
                 {
                     articles.length>0 && articles.map((item) => (<div className='news-card'>
                         <div>
-                            <img src={item.image_url} className='news-img'/>
+                            <img src={item.urlToImage || 'https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg'} className='news-img' alt="Sorry no image"/>
                         </div>
-                        <div>{item.title}</div>
+                        <div className='news-title'>{item.title}</div>
+                        <div>{item.content}</div>
                     </div>)
                     )
                 }
