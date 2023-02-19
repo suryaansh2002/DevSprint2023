@@ -4,7 +4,7 @@ import axios from 'axios';
 import Sidenav from '../../Components/SideNav/Sidenav';
 import logo from '../../assets/logo.png'
 import './Home.css'
-import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
+import { AiOutlineHeart, AiFillHeart, AiFillCalendar } from 'react-icons/ai'
 import { BsBookmark, BsBookmarkFill, BsSearch } from 'react-icons/bs'
 import { MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem, MDBDropdownLink, MDBContainer } from 'mdb-react-ui-kit';
 
@@ -189,11 +189,15 @@ export default function Home() {
                             />
                         </div>
                         <div className='news-title'>{item.title}</div>
+                        <div className='da-cont'>
+
+                        <div className='news-date'><AiFillCalendar className='calender-icon'/>{new Date(item.publishedAt).toDateString()}</div>
                         <div className='news-autor'>
                             Author:
                             <a target={item.author && '_blank'} href={item.author ? 'https://www.google.com/search?q=' + item.author : ''}>
                                 {item.author ? item.author : 'Anonymous'}
                             </a>
+                        </div>
                         </div>
                         {item.content && <div className='content-ar'>{item.content.slice(-6) == 'chars]' ? item.content.slice(0, -17) + '...' : item.content}</div>}
 
