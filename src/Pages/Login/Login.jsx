@@ -54,6 +54,11 @@ export default function Login() {
                 <div className='login-err'>{errorMsg}</div>
                 }
             </form>
+            <div className='bottom-box'>
+                <div className="quote">
+                News Is The First Draft Of History...
+                </div>
+            </div>
         </div>
     )
 }
