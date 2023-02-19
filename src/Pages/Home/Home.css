@@ -94,7 +94,7 @@ border-radius: 20px;
 .rm{
     text-align: center;
     font-size: 1.1rem;
-    margin-top: 2.5rem;
+    margin-top: 1rem;
 }
 
 .rm a{
@@ -130,4 +130,12 @@ border-radius: 20px;
 .filters{
     margin-left:3rem;
     margin-top:2rem;
+}
+
+select {
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    width: 100%;
+    margin-left: -10%;
+    margin-bottom: 2rem;
 }
