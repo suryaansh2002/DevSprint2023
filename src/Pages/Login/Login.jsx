@@ -53,6 +53,7 @@ export default function Login() {
         else if(!error){
             localStorage.setItem('newsprism',email.split('@')[0])
             localStorage.setItem('npusername',makeid(2,3))
+            localStorage.setItem('bookmarked',JSON.stringify([]))
 
             window.location.href='/home'
         }
