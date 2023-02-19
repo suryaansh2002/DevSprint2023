@@ -1,7 +1,6 @@
 .sidenav{
-    width: 15rem;
+    width: 18rem;
     height: 100vh;
-    background-color: aliceblue;
     position: fixed;
     padding-top: 2rem;
 }
