@@ -1,6 +1,24 @@
 .b-container{
-    width: 100vw;
+    width: 100%;
     height: 100vh;
 background-color: #FCF5EB;
 text-align: center;
+
+
+}
+
+.b-title{
+    text-align: center;
+    font-size: 3rem;
+    color: #302414;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+
+.home-icon{
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 3rem;
+    color: #302414;
 }
