@@ -6,7 +6,6 @@ import logo from '../../assets/logo.png'
 import './Home.css'
 import { AiOutlineHeart, AiFillHeart, AiFillCalendar } from 'react-icons/ai'
 import { BsBookmark, BsBookmarkFill, BsSearch, BsFillMoonFill, BsFillSunFill } from 'react-icons/bs'
-import { MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem, MDBDropdownLink, MDBContainer } from 'mdb-react-ui-kit';
 
 export default function Home() {
     const [articles, setArticles] = useState([])
