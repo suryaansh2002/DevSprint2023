@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import './Login.css'
+import logo from '../../assets/logo.png'
 export default function Login() {
     function makeid(length1,length2) {
         let result = '';
@@ -76,6 +77,7 @@ export default function Login() {
             </form>
             <div className='bottom-box'>
                 <div className="quote">
+                <img className="logo-b" src={logo}/>
                 News Is The First Draft Of History...
                 </div>
             </div>
