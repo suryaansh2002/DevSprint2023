@@ -11,7 +11,7 @@ text-align: center;
 }
 .news-card{
     display: inline-block;
-    background-color: #402D27;
+    background-color: #302414;
     padding: 2rem;
     width: 60%;
 
@@ -49,7 +49,7 @@ border-radius: 20px;
     border: none;
     background-color: white;
     border-radius: 20px;
-    background-color:  rgb(61, 28, 1);
+    background-color: #302414;
     color: #FCF5EB;
 
 }
