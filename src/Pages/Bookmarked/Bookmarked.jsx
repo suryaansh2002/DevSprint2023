@@ -1,6 +1,8 @@
 import React,{useEffect, useState} from 'react'
 import './Bookmarked.css'
 import logo from '../../assets/logo.png'
+import { AiOutlineHeart, AiFillHeart, AiFillCalendar } from 'react-icons/ai'
+
 export default function Bookmarked() {
     const [articles,setArticles]=useState([])
     useEffect(()=>{
@@ -28,7 +30,22 @@ export default function Bookmarked() {
                             />
                         </div>
                         <div className='news-title'>{item.title}</div>
-                        {item.content && <div className='content-ar'>{item.content.slice(-6) == 'chars]' ? item.content.slice(0, -14) : item.content}</div>}
+                        <div className='da-cont'>
+
+                        <div className='news-date'><AiFillCalendar className='calender-icon'/>{new Date(item.publishedAt).toDateString()}</div>
+                        <div className='news-autor'>
+                            Author:
+                            <a target={item.author && '_blank'} href={item.author ? 'https://www.google.com/search?q=' + item.author : ''}>
+                                {item.author ? item.author : 'Anonymous'}
+                            </a>
+                        </div>
+                        </div>
+                        
+                        {item.content && <div className='content-ar'>{item.content.slice(-6) == 'chars]' ? item.content.slice(0, -17) + '...' : item.content}</div>}
+
+                        <div className='rm'>
+                                <a href={item.url} target='_blank'>Read More...</a>
+                            </div>
                         
                     </div>
 

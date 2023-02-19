@@ -108,13 +108,13 @@ border-radius: 20px;
 .news-autor{
     color: white;
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-bottom: 1rem;
 }
 
 .news-autor a{
     margin-left: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: white;
     
 }
@@ -148,6 +148,10 @@ select {
     width: 80%;
     margin-left: 10%;
     margin-bottom: 2rem;
+<<<<<<< HEAD
+=======
+
+>>>>>>> e6e63ce4f270e21d83a29d28b0efb1b6762848d4
     background-color: #d9c8ac96;
     border: none;
     height:fit-content
@@ -216,4 +220,24 @@ select {
 }
 }
 
+<<<<<<< HEAD
 
+=======
+.news-date{
+    color: white;
+    font-size: 1rem;
+}
+
+.da-cont{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between ;
+    margin-bottom: 0.5rem;
+}
+
+.calender-icon{
+    color: white;
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}
+>>>>>>> e6e63ce4f270e21d83a29d28b0efb1b6762848d4
