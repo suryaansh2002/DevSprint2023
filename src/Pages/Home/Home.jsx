@@ -38,7 +38,7 @@ export default function Home() {
                             <img src={item.urlToImage || 'https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg'} className='news-img' alt="Sorry no image"/>
                         </div>
                         <div className='news-title'>{item.title}</div>
-                        <div>{item.content}</div>
+                        <div className='content-ar'>{item.content}</div>
                     </div>)
                     )
                 }
