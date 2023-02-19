@@ -11,9 +11,10 @@ text-align: center;
 }
 .news-card{
     display: inline-block;
-    background-color: #302414;
+    background-color: #483725;
     padding: 2rem;
-    width: 60%;
+    width: 80%;
+    margin-top: -2rem;
 
     margin: 2rem;
     border-radius: 10px;
@@ -26,7 +27,7 @@ text-align: center;
     font-size: 1.2rem;
 }
 .news-img{
-width: 20rem;
+width: 25rem;
 margin-bottom: 3rem;
 border-radius: 20px;
 }
@@ -41,6 +42,7 @@ border-radius: 20px;
 .search-box{
     text-align: center;
     padding: 1.5rem;
+    margin-top: 1rem;
 }
 
 .search-inp{
@@ -49,9 +51,12 @@ border-radius: 20px;
     border: none;
     background-color: white;
     border-radius: 20px;
-    background-color: #302414;
+    background-color: #483725;
     color: #FCF5EB;
 
+}
+.box{
+    margin-top: -1rem;
 }
 
 .search-btn{
@@ -146,7 +151,6 @@ select {
     width: 80%;
     margin-left: 10%;
     margin-bottom: 2rem;
-
     background-color: #d9c8ac96;
     border: none;
     height:fit-content
@@ -159,7 +163,6 @@ select {
     color:#302414;
     margin-bottom:1rem;
 }
-
 @media only screen and (max-width: 700px) {
 .sidenav{
     display: none;
