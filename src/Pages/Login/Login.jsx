@@ -85,6 +85,7 @@ export default function Login() {
             <div className='bottom-box'>
                 <div className="quote">
                 <img className="logo-b" src={logo}/>
+                
                 News Is The First Draft Of History...
                 </div>
             </div>

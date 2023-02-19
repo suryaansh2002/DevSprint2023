@@ -139,3 +139,59 @@ select {
     margin-left: -10%;
     margin-bottom: 2rem;
 }
+
+@media only screen and (max-width: 700px) {
+.sidenav{
+    display: none;
+}
+
+.home-main{
+    width: 100vw;
+    margin-left: 0;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+.news-card{
+    width:80vw;
+    margin-left: 0;
+    overflow-x: hidden;
+    margin-left: 10vw;
+}
+
+.news-img{
+    width: 80%;
+}
+
+.news-title{
+    font-size: 3vw;
+}
+
+.news-autor{
+    font-size: 2.5vw;
+}
+
+.news-autor a{
+    font-size: 2.5vw;
+}
+.content-ar{
+    font-size: 2.5vw;
+}
+
+.rm{
+    font-size: 3vw;
+}
+
+.likeBtn{
+    font-size: 5vw;
+}
+.search-inp{
+    margin-left: 5%;
+    width: 80%;
+}
+.search-btn{
+    font-size: 1.2rem;
+    color: white;
+    transform: translate(-3rem, -0.5rem);
+}
+}
