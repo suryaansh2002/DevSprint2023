@@ -62,7 +62,7 @@ border-radius: 20px;
     font-size: 2rem;
     background: transparent;
     border: none;
-    color: white;
+    color: #FCF5EB;
 }
 
 .cards-btnC{
@@ -102,4 +102,24 @@ border-radius: 20px;
 .news-autor a{
     margin-left: 0.5rem;
     font-size: 1.2rem;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+.sidenav{
+    background-color: #92805fd8;
+}
+.logo-nav{
+    width: 8rem;
+    margin-left: 4rem;
+    margin-bottom: 1rem;
+}
+.un{
+    color:#302414;
+    font-weight: 400;
+    font-size: 2rem;
+    margin-bottom:2rem;
+}
+.filters{
+    margin-left:3rem;
+    margin-top:2rem;
 }
