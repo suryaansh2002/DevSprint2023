@@ -3,5 +3,11 @@
     height: 100vh;
     background-color: aliceblue;
     position: fixed;
+    padding-top: 2rem;
 }
 
+.un{
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: 500;
+}

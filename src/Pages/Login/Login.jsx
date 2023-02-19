@@ -8,6 +8,7 @@ export default function Login() {
 
     const handleSubmit = (e) =>{
         e.preventDefault();
+        setError(false)
         if(!email){
             setError(true)
             setErrorMsg('Please enter email')            
@@ -29,6 +30,7 @@ export default function Login() {
             setErrorMsg('Password should contain atleast 1 lower case character')
         }
         else if(!error){
+            localStorage.setItem('newsprism',email.split('@')[0])
             window.location.href='/home'
         }
     }
