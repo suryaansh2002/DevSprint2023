@@ -1,8 +1,35 @@
 .login-container{
     display: flex;
     text-align: center;
-    align-content: center;
+    align-items: center;
     justify-content: center;
     width: 100vw;
     height: 100vh;
+    background-image: url('../../assets/login-bg.png');
+}
+
+.login-form{
+    height: max-content;
+    background-color: black;
+    color: white;
+    width: 25rem;
+    padding: 2rem 2rem;
+    border-radius: 20px;
+}
+
+.login-sub{
+    background-color: white;
+    color: black;
+    margin: 1rem;
+}
+
+.login-sub:hover{
+    background-color: azure;
+    color: black;
+}
+
+.login-err{
+    font-size: 1rem;
+    text-align: center;
+    color: red;
 }
