@@ -70,12 +70,36 @@ border-radius: 20px;
     justify-content: space-between;
     flex-direction: row;
     margin-bottom: -2rem;
+    margin-top: 1rem;
+}
+
+.bMarked{
+    font-size: 1rem;
+    text-align: center;
+}
+
+.bMarked a{
+    color: #302414;
+    text-decoration: none;
+}
+
+.rm{
+    text-align: center;
+    font-size: 1.1rem;
     margin-top: 2rem;
 }
 
-.sideNavIcon{
-    font-size: 2rem;
-    margin-top: 2rem;
-    margin-left: 50%;
-    transform: translateX(-50%);
+.rm a{
+    color: white;
+    text-decoration: none;
+}
+.news-autor{
+    color: white;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.news-autor a{
+    margin-left: 0.5rem;
+    font-size: 1.2rem;
 }
