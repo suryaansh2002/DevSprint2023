@@ -2,6 +2,26 @@ import React, {useState} from 'react'
 import './Login.css'
 import logo from '../../assets/logo.png'
 export default function Login() {
+    function makeid(length1,length2) {
+        let result = '';
+        const characters1 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        const characters2 = '0123456789'
+        const characters1Length = characters1.length;
+        const characters2Length = characters2.length;
+
+        let counter = 0;
+        while (counter < length1) {
+          result += characters1.charAt(Math.floor(Math.random() * characters1Length));
+          counter += 1;
+        }
+        counter=0
+        while (counter < length2) {
+            result += characters2.charAt(Math.floor(Math.random() * characters2Length));
+            counter += 1;
+          }
+  
+        return result;
+    }
      const [email, setEmail] = useState('')
      const [password, setPassword] = useState('')
      const [error, setError] = useState('')
@@ -32,6 +52,9 @@ export default function Login() {
         }
         else if(!error){
             localStorage.setItem('newsprism',email.split('@')[0])
+            localStorage.setItem('npusername',makeid(2,3))
+            localStorage.setItem('bookmarked',JSON.stringify([]))
+
             window.location.href='/home'
         }
     }
@@ -42,16 +65,12 @@ export default function Login() {
                 <div class="form-group login-c">
                     <label for="exampleInputEmail1">Email address</label>
                     <input type="email" onChange={(e)=>{setEmail(e.target.value)}} class="form-control" id="exampleInputEmail1" required aria-describedby="emailHelp" placeholder="Enter email" />
-                    {/* <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> */}
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
                     <input type="password" onChange={(e)=>{setPassword(e.target.value)}} class="form-control" id="exampleInputPassword1" required placeholder="Password" />
                 </div>
-                {/* <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                </div> */}
+             
                 <button  class="btn login-sub" onClick={(e)=>{handleSubmit(e)}}>Submit</button>
                 {error &&
                 <div className='login-err'>{errorMsg}</div>
