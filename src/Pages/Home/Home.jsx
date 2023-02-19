@@ -105,10 +105,14 @@ export default function Home() {
     return (
         <div className='home-container'>
             <div className='sidenav'>
+                <div>
+                <img className="logo-nav" src={logo}/>
+                </div>
                 <div className='un'>
-                    Your Username:<br />
+                    WELCOME!<br />
                     {username}
                 </div>
+                <div className='filters'>
                 <div>Filter By:</div>
                 <div>
                     <div>Language</div>
@@ -141,6 +145,7 @@ export default function Home() {
                 <div>
                     <a href='./bookmarked'>Bokmarked Images</a>
                 </div>
+            </div>
             </div>
             <div className='home-main'>
                 <div className='search-box'>
