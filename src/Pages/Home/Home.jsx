@@ -31,7 +31,13 @@ export default function Home() {
             res.data.articles.map((item) => {
                 if (item.urlToImage) {
                     item['Liked'] = false
-                    item['bookmarked'] = false
+                    if (JSON.parse(localStorage.getItem('bookmarked')).includes(JSON.stringify(item))) {
+                        item['bookmarked'] = true
+                    }
+                    else {
+                        item['bookmarked'] = false
+
+                    }
                     arr.push(item)
                 }
             })
@@ -142,8 +148,8 @@ export default function Home() {
 
                     </select>
                 </div>
-                <div>
-                    <a href='./bookmarked'>Bokmarked Images</a>
+                <div className='bMarked'>
+                    <a href='./bookmarked'>Bokmarked Posts</a>
                 </div>
             </div>
             </div>
@@ -165,7 +171,16 @@ export default function Home() {
                             />
                         </div>
                         <div className='news-title'>{item.title}</div>
-                        {item.content && <div className='content-ar'>{item.content.slice(-6) == 'chars]' ? item.content.slice(0, -14) : item.content}</div>}
+                        <div className='news-autor'>
+                            Author: 
+                            <a target={'_blank'} >
+                                {item.author}
+                            </a>
+                        </div>
+                        {item.content && <div className='content-ar'>{item.content.slice(-6) == 'chars]' ? item.content.slice(0, -17) + '...' : item.content}</div>}
+                        <div className='rm'>
+                            <a href={item.url} target='_blank'>Read More</a>
+                        </div>
                         <div className='cards-btnC'>
                             {item.Liked ?
                                 <button className='likeBtn' onClick={() => {
@@ -210,28 +225,28 @@ export default function Home() {
 
                             {
                                 item.bookmarked ? <button className='likeBtn' onClick={() => {
-                                        var items = articles;
-                                        items = items.map((a) => {
-                                            if (a.url == item.url) {
-                                                console.log('here')
-                                                a.bookmarked = false;
-                                                return a;
-                                            }
+                                    var items = articles;
+                                    items = items.map((a) => {
+                                        if (a.url == item.url) {
+                                            console.log('here')
+                                            a.bookmarked = false;
                                             return a;
-                                        })
-                                        console.log(items)
-                                        setArticles(
-                                            items
-                                        )
-                                        var b=JSON.parse(localStorage.getItem('bookmarked'))
-                                        b=b.filter((i)=>{
-                                            return i.url!=item.url
-                                        })
-                                        localStorage.setItem('bookamarked', JSON.stringify(b));
-                                        
-                                    }}>
-                                        <BsBookmarkFill />
-                                    </button> :
+                                        }
+                                        return a;
+                                    })
+                                    console.log(items)
+                                    setArticles(
+                                        items
+                                    )
+                                    var b = JSON.parse(localStorage.getItem('bookmarked'))
+                                    b = b.filter((i) => {
+                                        return i.url != item.url
+                                    })
+                                    localStorage.setItem('bookmarked', JSON.stringify(b));
+
+                                }}>
+                                    <BsBookmarkFill />
+                                </button> :
                                     <button className='likeBtn' onClick={() => {
                                         var items = articles;
                                         items = items.map((a) => {
@@ -246,8 +261,10 @@ export default function Home() {
                                         setArticles(
                                             items
                                         )
-                                        var b=JSON.parse(localStorage.getItem('bookmarked')).push(item.url)
-                                        localStorage.setItem('bookamarked', JSON.stringify(b));
+                                        var b = JSON.parse(localStorage.getItem('bookmarked'))
+                                        console.log(b)
+                                        b.push(JSON.stringify(item))
+                                        localStorage.setItem('bookmarked', JSON.stringify(b));
 
                                     }}>
                                         <BsBookmark />

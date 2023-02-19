@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
+import Bookmarked from './Pages/Bookmarked/Bookmarked';
 const router = createBrowserRouter(
   [
     {
@@ -18,6 +19,10 @@ const router = createBrowserRouter(
       path: "/home",
       element: <Home />
     },
+    {
+      path:"/bookmarked",
+      element:<Bookmarked/>
+    }
 
   ]
 );
