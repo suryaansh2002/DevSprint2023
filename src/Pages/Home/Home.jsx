@@ -57,7 +57,7 @@ export default function Home() {
                             />
                         </div>
                         <div className='news-title'>{item.title}</div>
-                        <div>{item.content}</div>
+                        <div className='content-ar'>{item.content}</div>
                     </div>)
                     )
                 }

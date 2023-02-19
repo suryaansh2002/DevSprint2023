@@ -6,21 +6,27 @@
 .home-main{
 width: calc(100vw - 20rem);
 margin-left: 15rem;
+background-color: #FCF5EB;
 }
 .news-card{
     display: inline-block;
-    background-color: antiquewhite;
+    background-color:  rgb(61, 28, 1);
     padding: 2rem;
     width: 30rem;
     margin: 2rem;
     height: 20rem;
     vertical-align: top;
     border-radius: 10px;
+    margin-left: 5rem;
 }
-
+.content-ar{
+    color: #FCF5EB;
+    font-style: italic;
+}
 .news-img{
 width: 10rem;
 }
 .news-title{
     font-weight: bold;
+    color: #FCF5EB;
 }
