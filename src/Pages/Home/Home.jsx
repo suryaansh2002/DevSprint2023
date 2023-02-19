@@ -6,12 +6,15 @@ import logo from '../../assets/logo.png'
 import './Home.css'
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
 import { BsBookmark, BsBookmarkFill, BsSearch } from 'react-icons/bs'
+import { MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem, MDBDropdownLink, MDBContainer } from 'mdb-react-ui-kit';
+
 export default function Home() {
     const [articles, setArticles] = useState([])
     const [username, setUsername] = useState('')
     const [search, setSearch] = useState('')
     const [language, setLanguage] = useState('')
     const [category, setCategory] = useState('')
+    const [filter, setFilter] = useState('')
 
     // const [search, setSearch] = useState('')
 
@@ -112,57 +115,66 @@ export default function Home() {
         <div className='home-container'>
             <div className='sidenav'>
                 <div>
-                <img className="logo-nav" src={logo}/>
+                    <img className="logo-nav" src={logo} />
                 </div>
                 <div className='un'>
                     WELCOME!<br />
                     {username}
                 </div>
                 <div className='filters'>
-                <div>Filter By:</div>
-                <select>
-                    <option>Language</option>
-                    <option>Sort By</option>
-                    <option>Category</option>
-
-                </select>
-                {/* <div>
-                    <div>Language</div>
-                    <select onChange={(e) => searchLang(e.target.value)} >
-                        <option value={'en'}>English</option>
-                        <option value={'fr'}>French</option>
-                        <option value={'es'}>Spanish</option>
-                        <option value={'it'}>Italian</option>
-
+                    <div className='filterBy'>>Filter By:</div>
+                    <select placeholder='Filter By' onChange={(e) => { setFilter(e.target.value) }}>
+                        <option> -None- </option>
+                        <option value={'lang'}>
+                            Language
+                        </option>
+                        <option value={'sort'}>Sort By</option>
+                        <option value={'cat'}>Category</option>
                     </select>
+                    {filter == 'lang' && <>
+                        <select onChange={(e) => searchLang(e.target.value)} >
+                            <option value={'en'}>English</option>
+                            <option value={'fr'}>French</option>
+                            <option value={'es'}>Spanish</option>
+                            <option value={'it'}>Italian</option>
 
-                    <div>Sort By</div>
-                    <select onChange={(e) => { sortBy(e.target.value) }}>
+                        </select>
 
-                        <option value={'relavency'}>Relavency</option>
-                        <option value={'popularity'}>Popularity</option>
-                        <option value={'publishedAt'}>Published Date</option>
+                    </>}
+                    {filter == 'sort' && <>
+                        <select onChange={(e) => { sortBy(e.target.value) }}>
 
-                    </select>
+                            <option value={'relavency'}>Relavency</option>
+                            <option value={'popularity'}>Popularity</option>
+                            <option value={'publishedAt'}>Published Date</option>
 
-                    <div>Category</div>
-                    <select onChange={(e) => { searchCategory(e.target.value) }}>
+                        </select>
 
-                        <option value={'sports'}>Sports</option>
-                        <option value={'business'}>Business</option>
-                        <option value={'entertainment'}>Entertainment</option>
+                    </>}
+                    {filter == 'cat' && <>
+                        <select onChange={(e) => { searchCategory(e.target.value) }}>
 
-                    </select>
-                </div> */}
-                <div className='bMarked'>
-                    <a href='./bookmarked'>Bokmarked Posts</a>
+                            <option value={'sports'}>Sports</option>
+                            <option value={'business'}>Business</option>
+                            <option value={'entertainment'}>Entertainment</option>
+
+                        </select>
+
+                    </>}
+
+                    <div>
+
+
+                    </div>
+                    <div className='bMarked'>
+                        <a href='./bookmarked'>>Bokmarked Posts</a>
+                    </div>
                 </div>
-            </div>
             </div>
             <div className='home-main'>
                 <div className='search-box'>
                     <input placeholder='Search...' className='search-inp' onChange={(e) => { setSearch(e.target.value) }} />
-                    <button className='search-btn btn' onClick={() => { searchArticles() }}><BsSearch className='s-icon'/></button>
+                    <button className='search-btn btn' onClick={() => { searchArticles() }}><BsSearch className='s-icon' /></button>
                 </div>
                 {
                     articles.length > 0 && articles.map((item) => (<><div className='news-card'>
@@ -178,13 +190,13 @@ export default function Home() {
                         </div>
                         <div className='news-title'>{item.title}</div>
                         <div className='news-autor'>
-                            Author: 
-                            <a target={item.author && '_blank'} href={item.author ?'https://www.google.com/search?q=' + item.author : ''}>
+                            Author:
+                            <a target={item.author && '_blank'} href={item.author ? 'https://www.google.com/search?q=' + item.author : ''}>
                                 {item.author ? item.author : 'Anonymous'}
                             </a>
                         </div>
                         {item.content && <div className='content-ar'>{item.content.slice(-6) == 'chars]' ? item.content.slice(0, -17) + '...' : item.content}</div>}
-                        
+
                         <div className='cards-btnC'>
                             {item.Liked ?
                                 <button className='likeBtn' onClick={() => {
@@ -227,8 +239,8 @@ export default function Home() {
                                 </button>
                             }
                             <div className='rm'>
-                            <a href={item.url} target='_blank'>Read More...</a>
-                        </div>
+                                <a href={item.url} target='_blank'>Read More...</a>
+                            </div>
                             {
                                 item.bookmarked ? <button className='likeBtn' onClick={() => {
                                     var items = articles;
