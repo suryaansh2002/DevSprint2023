@@ -1,0 +1,19 @@
+.home-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.home-main{
+
+}
+.news-card{
+    display: inline-block;
+    background-color: antiquewhite;
+    padding: 2rem;
+    width: 15rem;
+    border-radius: 10px;
+}
+
+.news-img{
+width: 10rem;
+}
