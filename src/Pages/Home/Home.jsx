@@ -171,11 +171,14 @@ export default function Home() {
                 </div>
             </div>
             <div className='home-main'>
+                <form onSubmit={(e)=>{e.preventDefault(); searchArticles() }}>
                 <div className='search-box'>
                     <input placeholder='Search...' className='search-inp' onChange={(e) => { setSearch(e.target.value) }} />
-                    <button className='search-btn btn' onClick={() => { searchArticles() }}><BsSearch className='s-icon' /></button>
+                    <button className='search-btn btn' type="submit" onClick={() => { searchArticles() }}><BsSearch className='s-icon' /></button>
                 </div>
+                </form>
                 <div className='box'>
+                
 
                 {
                     articles.length > 0 && articles.map((item) => (<><div className='news-card'>
