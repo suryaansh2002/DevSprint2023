@@ -5,7 +5,7 @@ import Sidenav from '../../Components/SideNav/Sidenav';
 import logo from '../../assets/logo.png'
 import './Home.css'
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
-import { BsBookmark, BsBookmarkFill, BsFillBookmarkFill } from 'react-icons/bs'
+import { BsBookmark, BsBookmarkFill, BsSearch } from 'react-icons/bs'
 export default function Home() {
     const [articles, setArticles] = useState([])
     const [username, setUsername] = useState('')
@@ -155,8 +155,8 @@ export default function Home() {
             </div>
             <div className='home-main'>
                 <div className='search-box'>
-                    <input className='search-inp' onChange={(e) => { setSearch(e.target.value) }} />
-                    <button className='search-btn btn' onClick={() => { searchArticles() }}>Search</button>
+                    <input placeholder='Search...' className='search-inp' onChange={(e) => { setSearch(e.target.value) }} />
+                    <button className='search-btn btn' onClick={() => { searchArticles() }}><BsSearch className='s-icon'/></button>
                 </div>
                 {
                     articles.length > 0 && articles.map((item) => (<><div className='news-card'>
@@ -173,13 +173,13 @@ export default function Home() {
                         <div className='news-title'>{item.title}</div>
                         <div className='news-autor'>
                             Author: 
-                            <a target={'_blank'} >
-                                {item.author}
+                            <a target={item.author && '_blank'} href={item.author ?'https://www.google.com/search?q=' + item.author : ''}>
+                                {item.author ? item.author : 'Anonymous'}
                             </a>
                         </div>
                         {item.content && <div className='content-ar'>{item.content.slice(-6) == 'chars]' ? item.content.slice(0, -17) + '...' : item.content}</div>}
                         <div className='rm'>
-                            <a href={item.url} target='_blank'>Read More</a>
+                            <a href={item.url} target='_blank'>Read More...</a>
                         </div>
                         <div className='cards-btnC'>
                             {item.Liked ?

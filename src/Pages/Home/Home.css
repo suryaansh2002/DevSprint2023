@@ -54,6 +54,14 @@ border-radius: 20px;
 
 }
 
+.search-btn{
+    font-size: 1.2rem;
+    color: white;
+    transform: translate(-3rem, -0.5rem);
+}
+.search-btn:hover{
+    color: white;
+}
 .news-imBox{
     text-align: center;
 }
@@ -70,7 +78,7 @@ border-radius: 20px;
     justify-content: space-between;
     flex-direction: row;
     margin-bottom: -2rem;
-    margin-top: 1rem;
+    margin-top: 0rem;
 }
 
 .bMarked{
@@ -86,24 +94,24 @@ border-radius: 20px;
 .rm{
     text-align: center;
     font-size: 1.1rem;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
 }
 
 .rm a{
     color: white;
-    text-decoration: none;
 }
 .news-autor{
     color: white;
     text-align: center;
     font-size: 1.1rem;
+    margin-bottom: 1rem;
 }
 
 .news-autor a{
     margin-left: 0.5rem;
     font-size: 1.2rem;
-    margin-left: 50%;
-    transform: translateX(-50%);
+    color: white;
+    
 }
 .sidenav{
     background-color: #92805fd8;
