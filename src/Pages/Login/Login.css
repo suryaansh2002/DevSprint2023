@@ -10,11 +10,15 @@
 
 .login-form{
     height: max-content;
-    background-color: black;
+    background-color: rgb(61, 28, 1);
     color: white;
     width: 25rem;
     padding: 2rem 2rem;
-    border-radius: 20px;
+    border-radius: 15px;
+}
+.login-c{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .login-sub{

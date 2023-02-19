@@ -36,7 +36,7 @@ export default function Login() {
         <div className='login-container'>
 
             <form className='login-form'>
-                <div class="form-group">
+                <div class="form-group login-c">
                     <label for="exampleInputEmail1">Email address</label>
                     <input type="email" onChange={(e)=>{setEmail(e.target.value)}} class="form-control" id="exampleInputEmail1" required aria-describedby="emailHelp" placeholder="Enter email" />
                     {/* <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> */}
