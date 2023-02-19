@@ -6,7 +6,6 @@ import logo from '../../assets/logo.png'
 import './Home.css'
 import { AiOutlineHeart, AiFillHeart } from 'react-icons/ai'
 import { BsBookmark, BsBookmarkFill, BsSearch } from 'react-icons/bs'
-import { MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem, MDBDropdownLink, MDBContainer } from 'mdb-react-ui-kit';
 
 export default function Home() {
     const [articles, setArticles] = useState([])
@@ -122,7 +121,7 @@ export default function Home() {
                     {username}
                 </div>
                 <div className='filters'>
-                    <div className='filterBy'>>Filter By:</div>
+                    <div className='filterBy'>* Filter By:</div>
                     <select placeholder='Filter By' onChange={(e) => { setFilter(e.target.value) }}>
                         <option> -None- </option>
                         <option value={'lang'}>
@@ -167,7 +166,7 @@ export default function Home() {
 
                     </div>
                     <div className='bMarked'>
-                        <a href='./bookmarked'>>Bokmarked Posts</a>
+                        <a href='./bookmarked'>* Bookmarked Posts</a>
                     </div>
                 </div>
             </div>
@@ -176,6 +175,8 @@ export default function Home() {
                     <input placeholder='Search...' className='search-inp' onChange={(e) => { setSearch(e.target.value) }} />
                     <button className='search-btn btn' onClick={() => { searchArticles() }}><BsSearch className='s-icon' /></button>
                 </div>
+                <div className='box'>
+
                 {
                     articles.length > 0 && articles.map((item) => (<><div className='news-card'>
                         <div className='news-imBox'>
@@ -296,6 +297,8 @@ export default function Home() {
                     </>)
                     )
                 }
+                                </div>
+
             </div>
         </div>
 
