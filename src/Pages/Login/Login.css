@@ -27,7 +27,7 @@
     font-family: 'Gentium Book Plus', serif;
     font-style: italic;
     text-align: center;
-    margin-top: 4rem;
+    margin-top: 3rem;
     font-size: 3.5rem;
     
 }
@@ -38,9 +38,10 @@
 .bottom-box{
     background-color: #FCF5EB;
     width: 100vw;
-    height: 30vh;
+    height: 35vh;
     position:absolute;
-    top:70vh;
+    top:65vh;
+    overflow: hidden;
 }
 .logo-b{
     width: 10rem;

@@ -29,28 +29,34 @@ export default function Login() {
 
     const handleSubmit = (e) =>{
         e.preventDefault();
+        var checkError=false;
         setError(false)
         if(!email){
             setError(true)
+            checkError=true
             setErrorMsg('Please enter email')            
         }
         else if (email.indexOf('@')==-1){
             setError(true)
+            checkError=true
             setErrorMsg('Email address should contain @')
         }
         else if(password.length<8){
             setError(true)
+            checkError=true
             setErrorMsg('Password should be atleast 8 characters')
         }
         else if(password == password.toLowerCase()){
             setError(true)
+            checkError=true
             setErrorMsg('Password should contain atleast 1 upper case character')
         }
         else if(password == password.toUpperCase()){
             setError(true)
+            checkError=true
             setErrorMsg('Password should contain atleast 1 lower case character')
         }
-        else if(!error){
+        else if(!checkError){
             localStorage.setItem('newsprism',email.split('@')[0])
             localStorage.setItem('npusername',makeid(2,3))
             localStorage.setItem('bookmarked',JSON.stringify([]))
