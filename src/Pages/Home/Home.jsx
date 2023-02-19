@@ -194,17 +194,22 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-            <div className='home-main' id={theme == 'dark' && 'dark-home-container'}>
-                <button className='hamburger' onClick={() => { getNav() }}>
+              
+
+       
+            <div className='home-main'>
+            <button className='hamburger' onClick={() => { getNav() }}>
                     <GiHamburgerMenu />
 
                 </button>
-
+                <form onSubmit={(e)=>{e.preventDefault(); searchArticles() }}>
                 <div className='search-box'>
-                    <input placeholder='Search...' className='search-inp' id={theme == 'dark' && 'dark-home-search'} onChange={(e) => { setSearch(e.target.value) }} />
-                    <button className='search-btn btn' id={theme == 'dark' && 'search-icon'} onClick={() => { searchArticles() }}><BsSearch className='s-icon' /></button>
+                    <input placeholder='Search...' className='search-inp' onChange={(e) => { setSearch(e.target.value) }} />
+                    <button className='search-btn btn' type="submit" onClick={() => { searchArticles() }}><BsSearch className='s-icon' /></button>
                 </div>
+                </form>
                 <div className='box'>
+                
 
                     {
                         articles.length > 0 && articles.map((item) => (<>
